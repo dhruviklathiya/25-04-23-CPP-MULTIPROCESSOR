@@ -1,21 +1,21 @@
+// MERTHOD OVERRIDING
 #include<iostream>
-#include<string.h>
 using namespace std;
-class class1{
-	public:
-		void get(int a){
-			cout<<"class 1 : "<<a<<endl;
-		}
+class A{
+    public:
+    void display(int n1){
+        cout<<"CLASS A"<<n1;
+    }
 };
-class class2 : public class1{
-	public:
-		void get(int b){
-			cout<<"class 2 : "<<b<<endl;
-		}
+class B : public A{
+    public:
+    void display(int n1){
+        cout<<"CLASS B"<<n1<<endl;
+    }
 };
-int main(){
-	class2 obj;
-	obj.class1::get(132);
-	obj.get(2323);
-	return 0;
+int main (){
+    B obj1;
+    obj1.display(20);
+    obj1.A::display(20);
+    return 0;
 }
