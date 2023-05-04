@@ -1,22 +1,28 @@
 #include<iostream>
-#include<string.h>
 using namespace std;
-class same{
-	public:
-		void get(int a){
-			cout<<"get 1 : "<<a<<endl;
-		}
-		void get(float b){
-			cout<<"get 2 : "<<b<<endl;
-		}
-		void get(int a,int b){
-			cout<<"get 3 : "<<a*b<<endl;
-		}
+class A{
+    public:
+    void display(int n1){
+        cout<<"OUTPUT WHEN PASSING ONLY 1 PARAMETER"<<endl;
+        cout<<"First n1: "<<n1<<endl;
+    }
+    public:
+    void display(int n1,int n2){
+        cout<<"OUTPUT WHEN PASSING ONLY 2 PARAMETER"<<endl;
+        cout<<"second n1&n2===> n1: "<<n1<<n2<<endl;
+    }
+    public:
+    void display(int n1,int n2,int n3){
+        cout<<"OUTPUT WHEN PASSING ONLY 3 PARAMETER"<<endl;
+        cout<<"Third n1&n2&n3===> n1: "<<n1<<" n2: "<<n2<<" n3: "<<n3<<endl;
+    }
 };
-int main(){
-	same obj;
-	obj.get(6);
-	obj.get(9.00f);
-	obj.get(67,89);
-	return 0;
+int main (){
+    A obj;
+    obj.display(10);
+    obj.display(10,20);
+    obj.display(10,20,30);
+    return 0;
 }
+
+
