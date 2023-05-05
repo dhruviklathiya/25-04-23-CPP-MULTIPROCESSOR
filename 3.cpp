@@ -21,13 +21,13 @@ class A{
         obj.a = a++;
         return obj;
     }
-    A operator - (){
+    A operator -- (){
         A obj;
         obj.b = --b;
         obj.a = --a;
         return obj;
     }
-    A operator - (int){
+    A operator -- (int){
         A obj;
         obj.b = b--;
         obj.a = a--;
