@@ -1,39 +1,103 @@
-#include <iostream>
+// BINARY INCREMENT WITHOUT USE OF CONSTRUCTOR
+#include<iostream>
 using namespace std;
-
-class Counter {
-private:
-    int count; 
-
-public:
-    Counter(int initialCount = 0) : count(initialCount) {}
-
-    Counter operator+(int value) {
-        return Counter(count + value);
+class A{
+    public:
+    int a,b;
+    void setter(int n1, int n2){
+        a = n1;
+        b = n2;
     }
-
-    Counter operator-(int value) {
-        return Counter(count - value);
-    }
-
-    void display() {
-        cout << "Count: " << count << endl;
+    A operator + (A obj2){
+        A tempobj;
+        tempobj.a = a + obj2.a;
+        tempobj.b = b + obj2.b;
+        return tempobj;
     }
 };
-
-int main() {
-    Counter c1(5);
-    Counter c2 = c1 + 10; 
-    Counter c3 = c2 - 3;  
-
-    cout << "Original Count: ";
-    c1.display();
-
-    cout << "Count after increment: ";
-    c2.display();
-
-    cout << "Count after decrement: ";
-    c3.display();
-
+int main (){
+    A obj1,obj2,obj3;
+    obj1.setter(1000,2000);
+    obj2.setter(10,20);
+    obj3 = obj1+obj2;
+    cout<<"After sum of 2 objects value of a is:"<<obj3.a<<endl;
+    cout<<"After sum of 2 objects value of b is:"<<obj3.b<<endl;
     return 0;
 }
+
+// BINARY INCREMENT WITH USE OF CONSTRUCTOR
+// #include<iostream>
+// using namespace std;
+// class A{
+//     public:
+//     int a,b;
+//     A(int n1=0, int n2=0){
+//         a = n1;
+//         b = n2;
+//     }
+//     A operator + (A &obj2){
+//         A tempobj;
+//         tempobj.a = a + obj2.a;
+//         tempobj.b = b + obj2.b;
+//         return tempobj;
+//     }
+// };
+// int main (){
+//     A obj1(1000,2000),obj2(10,20),obj3;
+//     obj3 = obj1+obj2;
+//     cout<<"After sum of 2 objects value of a is:"<<obj3.a<<endl;
+//     cout<<"After sum of 2 objects value of b is:"<<obj3.b<<endl;
+//     return 0;
+// }
+
+// BINARY DECREMENT WITHOUT USE OF CONSTRUCTOR
+#include<iostream>
+using namespace std;
+class A{
+    public:
+    int a,b;
+    void setter(int n1, int n2){
+        a = n1;
+        b = n2;
+    }
+    A operator + (A obj2){ // Sign used after operator keyword will not effect the function
+        A tempobj;
+        tempobj.a = a - obj2.a;
+        tempobj.b = b - obj2.b;
+        return tempobj;
+    }
+};
+int main (){
+    A obj1,obj2,obj3;
+    obj1.setter(1000,2000);
+    obj2.setter(10,20);
+    obj3 = obj1+obj2;
+    cout<<"After substraction of 2 objects value of a is:"<<obj3.a<<endl;
+    cout<<"After substraction of 2 objects value of b is:"<<obj3.b<<endl;
+    return 0;
+}
+
+// BINARY DECREMENT WITH USE OF CONSTRUCTOR
+// #include<iostream>
+// using namespace std;
+// class A{
+//     public:
+//     int a,b;
+//     A(int n1=0, int n2=0){
+//         a = n1;
+//         b = n2;
+//     }
+//     A operator + (A &obj2){
+//         A tempobj;
+//         tempobj.a = a - obj2.a;
+//         tempobj.b = b - obj2.b;
+//         return tempobj;
+//     }
+// };
+// int main (){
+//     A obj1(1000,2000),obj2(10,20),obj3;
+//     obj3 = obj1+obj2;
+//     cout<<"After substraction of 2 objects value of a is:"<<obj3.a<<endl;
+//     cout<<"After substraction of 2 objects value of b is:"<<obj3.b<<endl;
+//     return 0;
+// }
