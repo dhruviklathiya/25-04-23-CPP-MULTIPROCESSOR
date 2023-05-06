@@ -52,3 +52,57 @@ int main (){
     cout<<"After prefix decrement value of a is: "<<obj2.a<<endl;
     return 0;
 }
+
+// WAY:2
+// #include<iostream>
+// using namespace std;
+// class ParentClass{
+// 	private:
+// 		int a;
+// 	public:
+// 		void set(int n1){
+// 		    a=n1;
+// 		}
+// 		void get(){
+// 		cout<<"Current value of a is : "<<a<<endl;
+// 		}
+// 	ParentClass operator ++ (){
+// 		ParentClass ans;
+// 		 ans.a=++a;
+// 		 return ans;
+// 	}
+// };
+// class ParentClass2{
+// 	private:
+// 		int b;
+// 	public:
+// 		void set(int n1){
+// 			b=n1;
+// 		}
+// 		void get(){
+// 		cout<<"Current value of b is : "<<b<<endl;
+// 		}
+			
+// 	ParentClass2 operator -- (){
+// 		ParentClass2 asn;
+// 		 asn.b=--b;
+// 		 return asn;
+// 	}
+// };
+// int main(){
+// 	ParentClass obj1,obj2;
+// 	cout<<"Example of increment"<<endl;
+// 	obj1.set(49);
+// 	obj1.get();
+// 	obj2 = ++obj1;
+// 	obj2.get();
+// 	cout<<endl
+// 	ParentClass2 ob1,ob2;
+// 	cout<<"Example of decrement"<<endl;
+// 	ob1.set(10);
+// 	ob1.get();
+// 	ob2 = --ob1;
+// 	ob2.get();
+// 	return 0;
+// }
+
